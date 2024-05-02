@@ -9,6 +9,20 @@
 
 
  Clone this repository 
- 
- Compile and Run, enjoy :)
+```
+ git clone git@github.com:rafaelcolvara/ParseLogCloudwalk.git
+```
+ Compile 
 
+```
+mvn clean install
+```
+ and Run
+``` 
+java -jar target/ParseLogCloudwalk-1.0-SNAPSHOT.jar 
+
+```
+
+
+
+Enjoy ;)
