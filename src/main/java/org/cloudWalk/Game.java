@@ -23,7 +23,7 @@ public class Game {
         return instance;
     }
 
-    private void resetScore(){
+    void resetScore(){
 
         this.players = new HashSet<>();
         this.kills = new HashMap<>();
@@ -63,7 +63,17 @@ public class Game {
         return killsByMeans;
     }
 
+    public Set<String> getPlayers() {
+        return players;
+    }
 
+    public Map<String, Integer> getKills(){
+        return kills;
+    }
+
+    public Integer getTotalKills(){
+        return totalKills;
+    }
     public void printSummary() {
 
         Map<String, Object> summary = new LinkedHashMap<>();
