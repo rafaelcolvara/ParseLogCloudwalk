@@ -12,6 +12,10 @@
 ```
  git clone git@github.com:rafaelcolvara/ParseLogCloudwalk.git
 ```
+Entry on directory
+```
+cd ParseLogCloudwalk
+```
  Compile 
 
 ```
