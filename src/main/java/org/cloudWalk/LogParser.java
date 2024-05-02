@@ -42,7 +42,7 @@ public class LogParser {
         }
 
         if (currentGame != null) {
-            currentGame.printSummary();  // Print the last game
+            currentGame.printSummary();  // Print the last game and restart score
         }
 
         reader.close();

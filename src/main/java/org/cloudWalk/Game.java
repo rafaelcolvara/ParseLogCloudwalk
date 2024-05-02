@@ -28,6 +28,7 @@ public class Game {
         this.players = new HashSet<>();
         this.kills = new HashMap<>();
         this.killsByMeans = new HashMap<>();
+        totalKills=0;
 
     }
     public void addPlayer(String player) {
@@ -48,6 +49,7 @@ public class Game {
                 this.kills.put(victim, this.kills.get(victim) - 1);
             }
         } else {
+
             this.addPlayer(killer);
             if (!killer.equals(victim) && this.kills.containsKey(killer)) {
                 this.kills.put(killer, this.kills.get(killer) + 1);
@@ -65,9 +67,16 @@ public class Game {
     public void printSummary() {
 
         Map<String, Object> summary = new LinkedHashMap<>();
-        summary.put("game-" + current_game++, Map.of("kills_by_means", this.getKillsByMeans()));
+        summary.put("total_kills", this.totalKills );
+        summary.put("players", this.players);
+        summary.put("kills",  this.kills);
+
+        Map<String, Object> wrapper = new HashMap<>();
+        wrapper.put("game_" + current_game++ , summary);
+
+
         Gson result = new Gson();
-        String jsonOutput = result.toJson(summary);
+        String jsonOutput = result.toJson(wrapper);
         System.out.println(jsonOutput);
         resetScore();
     }
