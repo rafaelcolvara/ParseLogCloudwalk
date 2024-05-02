@@ -70,6 +70,7 @@ public class Game {
         summary.put("total_kills", this.totalKills );
         summary.put("players", this.players);
         summary.put("kills",  this.kills);
+        summary.put("kills_by_means", this.getKillsByMeans());
 
         Map<String, Object> wrapper = new HashMap<>();
         wrapper.put("game_" + current_game++ , summary);
