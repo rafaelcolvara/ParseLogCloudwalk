@@ -23,7 +23,7 @@ public class Game {
         return instance;
     }
 
-    void resetScore(){
+    public void resetScore(){
 
         this.players = new HashSet<>();
         this.kills = new HashMap<>();
@@ -84,11 +84,9 @@ public class Game {
 
         Map<String, Object> wrapper = new HashMap<>();
         wrapper.put("game_" + current_game++ , summary);
-
-
         Gson result = new Gson();
         String jsonOutput = result.toJson(wrapper);
         System.out.println(jsonOutput);
-        resetScore();
     }
+
 }

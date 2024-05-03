@@ -23,6 +23,7 @@ public class LogParser {
             if (line.contains("InitGame:")) {
                 if (currentGame != null) {
                     currentGame.printSummary();
+                    currentGame.resetScore();
                 }
                 currentGame = Game.getInstance();
             } else if (line.contains("ClientUserinfoChanged:")) {
